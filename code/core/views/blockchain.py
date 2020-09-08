@@ -33,7 +33,7 @@ class BlockChain(object):
             'timestamp': time.time()
         }
 
-        block = utils.sorted_dict_by_key(block)
+        block = sorted_dict_by_key(block)
 
         self.chain.append(block)
         # init pool
@@ -56,7 +56,7 @@ class BlockChain(object):
             'recipient_address': recipient_address,
             'value': value
         }
-        transaction = utils.sorted_dict_by_key(transaction)
+        transaction = sorted_dict_by_key(transaction)
 
         if sender_address == MINING_SENDER:
             self.transaction_pool.append(transaction)
@@ -90,7 +90,7 @@ class BlockChain(object):
             'nonce': nonce,
             'previous_hash': previous_hash
         }
-        guess_block = utils.sorted_dict_by_key(guess_block)
+        guess_block = sorted_dict_by_key(guess_block)
         guess_hash = self.hash(guess_block)
         return guess_hash[:difficulty] == '0'*difficulty
 

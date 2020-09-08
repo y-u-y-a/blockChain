@@ -99,9 +99,9 @@ if __name__ == '__main__':
 
 # BlockChain Node ################
 
-from .blockchain import *
+from .blockchain import BlockChain
 
-block_chain = blockchain.BlockChain(blockchain_address=wallet_M.blockchain_address)
+block_chain = BlockChain(blockchain_address=wallet_M.blockchain_address)
 
 is_added = block_chain.add_transaction(
     wallet_A.blockchain_address,
